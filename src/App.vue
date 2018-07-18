@@ -4,7 +4,9 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
+    <transition name="page" mode="out-in">
     <router-view/>
+    </transition>
   </div>
 </template>
 
@@ -26,4 +28,10 @@
     }
   }
 }
+.page-enter-active, .page-leave-active {
+    transition: opacity .5s
+  }
+  .page-enter, .page-leave-active {
+    opacity: 0
+  }
 </style>
